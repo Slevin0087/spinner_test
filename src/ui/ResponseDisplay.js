@@ -1,8 +1,4 @@
 export class ResponseDisplay {
-  /**
-   * Создает компонент для отображения текста ответа
-   * @param {string} selector - ID DOM-элемента для вывода
-   */
   constructor(selector) {
     this.element = document.getElementById(selector);
     if (!this.element) {
@@ -10,19 +6,12 @@ export class ResponseDisplay {
     }
   }
 
-  /**
-   * Устанавливает текст в элемент
-   * @param {string} text - Текст для отображения
-   */
   setText(text) {
     if (this.element) {
       this.element.textContent = text;
     }
   }
 
-  /**
-   * Показывает анимацию временной загрузки
-   */
   showLoading() {
     if (this.element) {
       this.element.textContent = "...";
@@ -30,9 +19,6 @@ export class ResponseDisplay {
     }
   }
 
-  /**
-   * Сбрасывает анимацию
-   */
   reset() {
     if (this.element) {
       this.element.style.animation = "";
@@ -40,7 +26,6 @@ export class ResponseDisplay {
   }
 }
 
-// Стили можно добавить в CSS:
 /*
   @keyframes pulse {
     0% { opacity: 0.5; }

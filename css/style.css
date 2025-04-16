@@ -81,7 +81,6 @@ body {
   .main-button {
     pointer-events: auto;
     background: linear-gradient(to bottom, #f7b733, #fc4a1a);
-    /* ... остальные стили ... */
   }
   
   .balance-change {

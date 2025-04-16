@@ -128,7 +128,7 @@ export class Drum {
     const exactStep = Config.iconSize + Config.drumPadding;
     const visibleHeight = Config.visibleRows * exactStep;
     // console.log('this.icons:', this.icons);
-    // 1. Двигаем и выравниваем
+
     let newIcons = null;
     // const moveDistance = this.speed * delta;
     // console.log('this.icons:', this.icons);
@@ -163,7 +163,6 @@ export class Drum {
       // console.log('count ПОСЛЕ:', count);
     }
 
-    // 3. Обработка временного символа
     if (this.tempIcon) {
       // console.log('this.tempIcon.y:', this.tempIcon.y);
       if (this.tempIcon.y >= 0 && this.tempIcon.y <= moveDistance) {

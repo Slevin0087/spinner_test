@@ -33,7 +33,7 @@ export class Game {
     await this.loadTextures();
     this.createDrums();
     this.createUI();
-    SoundManager.play('background', { loop: true, volume: 0.3 });
+    SoundManager.play("background", { loop: true, volume: 0.3 });
   }
 
   async createApp() {
@@ -45,14 +45,12 @@ export class Game {
       antialias: true,
     });
 
-    // Загружаем фоновую картинку
     const bgTexture = PIXI.Texture.from("assets/backgrounds/phon.jpg"); // путь к изображению
     const background = new PIXI.Sprite(bgTexture);
-    // Растягиваем на весь экран (если нужно)
+
     background.width = Config.appWidth;
     background.height = Config.appHeight;
 
-    // Добавляем фон в самое начало сцены
     this.app.stage.addChildAt(background, 0); // 0 — индекс (первый слой)
     // console.log("this.app:", this.app);
   }
@@ -65,13 +63,12 @@ export class Game {
   }
 
   createUI() {
-    // Создание дополнительных UI элементов
     this.ui.balanceDisplay = new BalanceDisplay("balance-display");
     this.ui.betDisplay = new BetDisplay("bet-display");
     this.ui.winDisplay = new WinDisplay("win-display");
     this.updateUI();
   }
-  
+
   updateUI() {
     this.ui.balanceDisplay.setText(`Баланс: $${this.balance}`);
     this.ui.betDisplay.setText(`Ставка: $${this.currentBet}`);
@@ -93,9 +90,9 @@ export class Game {
     if (this.spinning) return;
 
     this.spinning = true;
-    // Удаляем старый обработчик, если был
+
     this.app.ticker.remove(this.update.bind(this));
-    // Добавляем новый
+
     // this.app.ticker.add(this.update.bind(this));
     this.ui.spinBtn.setEnabled(false);
     this.ui.response.setText("Вращение...");
@@ -121,14 +118,14 @@ export class Game {
     // console.log('this.spinning:', this.spinning);
 
     if (!this.spinning) return;
-    let atLeastOneDrumSpinning = false; // Флаг, указывающий, есть ли крутящиеся барабаны
+    let atLeastOneDrumSpinning = false;
     this.drums.forEach((drum) => {
       if (drum.spinning) {
-        drum.update(delta); // Обновляем барабан, если он крутится
-        atLeastOneDrumSpinning = true; // Устанавливаем флаг в true
+        drum.update(delta);
+        atLeastOneDrumSpinning = true;
       }
     });
-    // Если ни один барабан не крутится, останавливаем основной spinning
+
     if (!atLeastOneDrumSpinning) {
       this.spinning = false;
     }

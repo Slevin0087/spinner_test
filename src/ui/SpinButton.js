@@ -1,4 +1,3 @@
-// ui/SpinButton.js
 export class SpinButton {
   constructor(selector, onClick) {
     this.element = document.getElementById(selector);
