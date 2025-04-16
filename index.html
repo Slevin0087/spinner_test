@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="utf-8">
+    <!-- <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"> -->
+    <meta name="viewport" content="width=1080, height=1920,maximum-scale=1.0 ,user-scalable=no, initial-scale=1.0" />
+    <title>крутилка</title>
+    <link rel="stylesheet" href="./css/style.css">
+    <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/howler/2.2.3/howler.min.js"></script> -->
+    <script src="https://cdn.jsdelivr.net/npm/howler@2.2.3/dist/howler.min.js"></script>
+    <script>window.PIXI = window.PIXI || {};</script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/pixi.js/7.3.2/pixi.min.js"></script>
+</head>
+<body>
+    <div id="game-container">
+        <canvas id="game-canvas"></canvas>
+        <div id="ui-overlay">
+            <div id="balance-display" class="ui-element">Баланс: $1000</div>
+            <div id="bet-display" class="ui-element">Ставка: $10</div>
+            <div id="win-display" class="ui-element">Выигрыш: $0</div>
+            
+            <div class="bet-controls">
+              <button id="bet-up">+</button>
+              <button id="bet-down">-</button>
+            </div>
+        </div>
+        <button id="spin-btn" class="main-button">КРУТИТЬ</button>
+        <div id="response">крути</div>
+    </div>
+
+    <!-- <script src="https://pixijs.download/v7.3.2/pixi.min.js"></script> -->
+    <!-- <script src="https://pixijs.download/release/pixi.min.js"></script> -->
+    <script type="module" src="./src/core/game.js"></script>
+</body>
+</html>
