@@ -1,6 +1,6 @@
 import { Config } from "../config/config.js";
 import { SoundManager } from "../sounds/SoundManager.js";
-import { Animations } from "../utils/animations.js";
+// import { Animations } from "../utils/animations.js";
 
 export class Drum {
   constructor(textures, app, index) {
@@ -132,12 +132,12 @@ export class Drum {
     let newIcons = null;
     // const moveDistance = this.speed * delta;
     // console.log('this.icons:', this.icons);
-    const count = this.icons.length; // Кэшируем длину
+    const count = this.icons.length;
     // console.log('count:', count);
     // console.log('this.drum.children.length:', this.drum.children.length);
 
     for (let i = 0; i < count; i++) {
-      this.icons[i].y += moveDistance; // for быстрее forEach
+      this.icons[i].y += moveDistance;
       // console.log('moveDistance:', moveDistance);
       // console.log('this.icons[i].y:', this.icons[i].y);
       // const remainder = this.icons[i].y % exactStep;
@@ -216,7 +216,7 @@ export class Drum {
         (i - 1) * (Config.iconSize + Config.drumPadding));
       // const bounceDistance = Config.bounceDistance / 2;
       const bounceDistance = Config.bounceDistance;
-      let bounceDirection = 1; // 1 = вниз, -1 = вверх
+      let bounceDirection = 1;
 
       const animate = (delta) => {
         // console.log('анимация началась');
@@ -225,7 +225,7 @@ export class Drum {
         f.y += 8 * bounceDirection * delta;
 
         if (bounceDirection === 1 && f.y >= originalY + bounceDistance) {
-          bounceDirection = -1; // Меняем направление
+          bounceDirection = -1;
         } else if (bounceDirection === -1 && f.y <= originalY) {
           f.y = originalY;
           this.app.ticker.remove(animate);
@@ -234,7 +234,7 @@ export class Drum {
 
       this.app.ticker.add(animate);
       // console.log('анимация закончилась');
-      return animate; // Возвращаем функцию для возможности ранней отмены
+      return animate;
       // console.log("f.y ПОСЛЕЕЕЕЕЕЕЕ:", f.y);
     });
     console.log("this.icons:", this.icons);

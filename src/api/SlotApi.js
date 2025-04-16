@@ -26,7 +26,7 @@ export class SlotApi {
 //       console.error("API Error:", error);
 //       return {
 //         success: false,
-//         combination: [3, 3, 3, 3, 3], // Комбинация по умолчанию при ошибке
+//         combination: [3, 3, 3, 3, 3],
 //         isWin: false,
 //         winAmount: 0
 //       };
@@ -51,7 +51,7 @@ export class SlotApi {
 //   }
 
 //   static calculateWin(combination) {
-//     const symbolValues = [10, 20, 30, 40, 50, 100, 150, 200, 500]; // Значения для каждого символа
+//     const symbolValues = [10, 20, 30, 40, 50, 100, 150, 200, 500];
 //     const counts = {};
 //     combination.forEach(num => counts[num] = (counts[num] || 0) + 1);
 

@@ -45,13 +45,13 @@ export class Game {
       antialias: true,
     });
 
-    const bgTexture = PIXI.Texture.from("assets/backgrounds/phon.jpg"); // путь к изображению
+    const bgTexture = PIXI.Texture.from("assets/backgrounds/phon.jpg");
     const background = new PIXI.Sprite(bgTexture);
 
     background.width = Config.appWidth;
     background.height = Config.appHeight;
 
-    this.app.stage.addChildAt(background, 0); // 0 — индекс (первый слой)
+    this.app.stage.addChildAt(background, 0);
     // console.log("this.app:", this.app);
   }
 
