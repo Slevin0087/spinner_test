@@ -1,10 +1,32 @@
-const iconSize = 200;
-const drumPadding = 20;
-const drumBorderSize = 7;
+function getViewportSize() {
+  return {
+    width: Math.max(
+      document.documentElement.clientWidth || 0,
+      window.innerWidth || 0
+    ),
+    height: Math.max(
+      document.documentElement.clientHeight || 0,
+      window.innerHeight || 0
+    ),
+  };
+}
+
+const { width, height } = getViewportSize();
+// console.log(`Initial viewport: ${width}x${height}`);
+
+// const iconSize = 200;
+// const drumPadding = 20;
+// const drumBorderSize = 7;
+
+const iconSize = width >= 1080 ? 200 : width / 6;
+// console.log("iconSize:", iconSize);
+
+const drumPadding = height / 200;
+const drumBorderSize = 5.5
 
 export const Config = {
-  appWidth: 1080,
-  appHeight: 1920,
+  appWidth: width,
+  appHeight: height,
   drumsCount: 5,
   visibleRows: 3,
   totalRows: 5,
@@ -31,7 +53,7 @@ export const Config = {
 
   bounceDistance: iconSize + drumPadding,
   bounceDuration: 0.3,
-  spinSpeed: 100,
+  spinSpeed: 50,
   slowDownSpeed: 2,
   serverDelay: { min: 1000, max: 3000 }, // Имитация задержки сервера
   // Имитация сервера
@@ -65,3 +87,8 @@ export const Config = {
     autoSpinDelay: 1.5,
   },
 };
+
+window.addEventListener("resize", () => {
+  getViewportSize();
+  // console.log(`Resized to: ${width}x${height}`);
+});

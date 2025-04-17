@@ -1,4 +1,4 @@
-body {
+/* body {
     margin: 0;
     padding: 0;
     overflow: hidden;
@@ -102,13 +102,631 @@ body {
   }
 
 @media (min-width: 540px) {
-    body {
+    body { */
         /* background: url('../assets/backgrounds/phon.png') no-repeat center center fixed; */
-        background: url('https://images.unsplash.com/photo-1612036782180-6f0b6cd846fe') no-repeat center center fixed;
+        /* background: url('https://images.unsplash.com/photo-1612036782180-6f0b6cd846fe') no-repeat center center fixed;
         background-size: cover;
     }
     #game-container {
         background: rgba(26, 26, 46, 0.9);
         box-shadow: 0 0 20px rgba(0,0,0,0.5);
     }
+} */
+
+body {
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  background-color: #1a1a2e;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100vw;
+  height: 100vh;
+  touch-action: manipulation;
+  font-family: Arial, sans-serif;
 }
+
+/* Базовые стили (для всех устройств) */
+body { font-size: 14px; }
+
+/* Small phones (портрет) */
+@media (min-width: 360px) {
+  #game-canvas {
+    /* font-size: 14px; */
+    width: 100vw;
+    height: 100vh;
+  }
+
+  #game-container {
+    position: relative;
+    width: 100vw;
+    /* max-width: 540px; */
+    height: 100vh;
+    /* max-height: 960px; */
+    overflow: hidden;
+  }
+
+  #ui-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: 10px;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    pointer-events: none;
+  }
+
+  .ui-element {
+    background: rgba(0, 0, 0, 0.7);
+    color: gold;
+    padding: 10px 10px;
+    margin: 5px;
+    border-radius: 10px;
+    /* font-size: 24px; */
+    font-weight: bold;
+    text-shadow: 0 0 5px black;
+  }
+
+  #response {
+    position: absolute;
+    top: 175px;
+    left: 50%;
+    transform: translateX(-50%);
+    color: white;
+    /* font-size: 24px; */
+    background: rgba(235, 240, 240, 0);
+    padding: 10px 20px;
+    border-radius: 10px;
+    z-index: 100;
+  }
+}
+
+/* Средние телефоны */
+@media (min-width: 400px) {
+  body {
+    font-size: 14px;
+  }
+  #game-canvas {
+    /* font-size: 14px; */
+    width: 100vw;
+    height: 100vh;
+  }
+
+  #game-container {
+    position: relative;
+    width: 100vw;
+    /* max-width: 540px; */
+    height: 100vh;
+    /* max-height: 960px; */
+    overflow: hidden;
+  }
+
+  #ui-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: 10px;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    pointer-events: none;
+  }
+
+  .ui-element {
+    background: rgba(0, 0, 0, 0.7);
+    color: gold;
+    padding: 10px 10px;
+    margin: 5px;
+    border-radius: 10px;
+    /* font-size: 24px; */
+    font-weight: bold;
+    text-shadow: 0 0 5px black;
+  }
+
+  #response {
+    position: absolute;
+    top: 175px;
+    left: 50%;
+    transform: translateX(-50%);
+    color: white;
+    /* font-size: 24px; */
+    background: rgba(235, 240, 240, 0);
+    padding: 10px 20px;
+    border-radius: 10px;
+    z-index: 100;
+  }
+}
+
+/* Большие телефоны (ландшафт) */
+@media (min-width: 576px) {
+  body {
+    font-size: 14px;
+  }
+  #game-canvas {
+    /* font-size: 14px; */
+    width: 100vw;
+    height: 100vh;
+  }
+
+  #game-container {
+    position: relative;
+    width: 100vw;
+    /* max-width: 540px; */
+    height: 100vh;
+    /* max-height: 960px; */
+    overflow: hidden;
+  }
+  #ui-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: 10px;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    pointer-events: none;
+  }
+
+  .ui-element {
+    background: rgba(0, 0, 0, 0.7);
+    color: gold;
+    padding: 10px 10px;
+    margin: 5px;
+    border-radius: 10px;
+    /* font-size: 24px; */
+    font-weight: bold;
+    text-shadow: 0 0 5px black;
+  }
+
+  #response {
+    position: absolute;
+    top: 175px;
+    left: 50%;
+    transform: translateX(-50%);
+    color: white;
+    /* font-size: 24px; */
+    background: rgba(235, 240, 240, 0);
+    padding: 10px 20px;
+    border-radius: 10px;
+    z-index: 100;
+  }
+}
+
+/* Небольшие планшеты (портрет) */
+@media (min-width: 768px) {
+  body {
+    /* background: url('../assets/backgrounds/phon.png') no-repeat center center fixed; */
+    background: url("https://images.unsplash.com/photo-1612036782180-6f0b6cd846fe")
+      no-repeat center center fixed;
+    background-size: cover;
+    font-size: 18px;
+  }
+  #game-canvas {
+    width: 60vw;
+    height: 100vh;
+  }
+
+  #game-container {
+    position: relative;
+    width: 60vw;
+    /* max-width: 540px; */
+    height: 100vh;
+    /* max-height: 960px; */
+    overflow: hidden;
+  }
+
+  #ui-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: 10px;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    pointer-events: none;
+  }
+
+  .ui-element {
+    background: rgba(0, 0, 0, 0.7);
+    color: gold;
+    padding: 10px 10px;
+    margin: 5px;
+    border-radius: 10px;
+    /* font-size: 24px; */
+    font-weight: bold;
+    text-shadow: 0 0 5px black;
+  }
+
+  #response {
+    position: absolute;
+    top: 175px;
+    left: 50%;
+    transform: translateX(-50%);
+    color: white;
+    /* font-size: 1px; */
+    background: rgba(235, 240, 240, 0);
+    padding: 10px 20px;
+    border-radius: 10px;
+    z-index: 100;
+  }
+}
+
+/* Стандартные планшеты (ландшафт) */
+@media (min-width: 992px) {
+  body {
+    /* background: url('../assets/backgrounds/phon.png') no-repeat center center fixed; */
+    background: url("https://images.unsplash.com/photo-1612036782180-6f0b6cd846fe")
+      no-repeat center center fixed;
+    background-size: cover;
+  }
+  #game-canvas {
+    /* font-size: 14px; */
+    width: 60vw;
+    height: 100vh;
+  }
+
+  #game-container {
+    position: relative;
+    width: 60vw;
+    /* max-width: 540px; */
+    height: 100vh;
+    /* max-height: 960px; */
+    overflow: hidden;
+  }
+
+  #ui-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: 10px;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    pointer-events: none;
+  }
+
+  .ui-element {
+    background: rgba(0, 0, 0, 0.7);
+    color: gold;
+    padding: 10px 10px;
+    margin: 5px;
+    border-radius: 10px;
+    /* font-size: 24px; */
+    font-weight: bold;
+    text-shadow: 0 0 5px black;
+  }
+
+  #response {
+    position: absolute;
+    top: 175px;
+    left: 50%;
+    transform: translateX(-50%);
+    color: white;
+    /* font-size: 1px; */
+    background: rgba(235, 240, 240, 0);
+    padding: 10px 20px;
+    border-radius: 10px;
+    z-index: 100;
+  }
+}
+
+/* Ноутбуки и небольшие мониторы */
+@media (min-width: 1200px) {
+  body {
+    /* background: url('../assets/backgrounds/phon.png') no-repeat center center fixed; */
+    background: url("https://images.unsplash.com/photo-1612036782180-6f0b6cd846fe")
+      no-repeat center center fixed;
+    background-size: cover;
+  }
+  #game-canvas {
+    /* font-size: 14px; */
+    width: 50vw;
+    height: 100vh;
+  }
+
+  #game-container {
+    position: relative;
+    width: 50vw;
+    /* max-width: 540px; */
+    height: 100vh;
+    /* max-height: 960px; */
+    overflow: hidden;
+  }
+
+  #ui-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: 10px;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    pointer-events: none;
+  }
+
+  .ui-element {
+    background: rgba(0, 0, 0, 0.7);
+    color: gold;
+    padding: 10px 10px;
+    margin: 5px;
+    border-radius: 10px;
+    /* font-size: 24px; */
+    font-weight: bold;
+    text-shadow: 0 0 5px black;
+  }
+
+  #response {
+    position: absolute;
+    top: 175px;
+    left: 50%;
+    transform: translateX(-50%);
+    color: white;
+    /* font-size: 1px; */
+    background: rgba(235, 240, 240, 0);
+    padding: 10px 20px;
+    border-radius: 10px;
+    z-index: 100;
+  }
+}
+
+/* Средние мониторы */
+@media (min-width: 1440px) {
+  body {
+    /* background: url('../assets/backgrounds/phon.png') no-repeat center center fixed; */
+    background: url("https://images.unsplash.com/photo-1612036782180-6f0b6cd846fe")
+      no-repeat center center fixed;
+    background-size: cover;
+  }
+  #game-canvas {
+    /* font-size: 14px; */
+    width: 50vw;
+    height: 100vh;
+  }
+
+  #game-container {
+    position: relative;
+    width: 50vw;
+    /* max-width: 540px; */
+    height: 100vh;
+    /* max-height: 960px; */
+    overflow: hidden;
+  }
+
+  #ui-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: 10px;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    pointer-events: none;
+  }
+
+  .ui-element {
+    background: rgba(0, 0, 0, 0.7);
+    color: gold;
+    padding: 10px 10px;
+    margin: 5px;
+    border-radius: 10px;
+    font-size: 24px;
+    font-weight: bold;
+    text-shadow: 0 0 5px black;
+  }
+
+  #response {
+    position: absolute;
+    top: 175px;
+    left: 50%;
+    transform: translateX(-50%);
+    color: white;
+    font-size: 24px;
+    background: rgba(235, 240, 240, 0);
+    padding: 10px 20px;
+    border-radius: 10px;
+    z-index: 100;
+  }
+}
+
+/* Большие/4K мониторы */
+@media (min-width: 1920px) {
+  body {
+    /* background: url('../assets/backgrounds/phon.png') no-repeat center center fixed; */
+    background: url("https://images.unsplash.com/photo-1612036782180-6f0b6cd846fe")
+      no-repeat center center fixed;
+    background-size: cover;
+  }
+  #game-canvas {
+    /* font-size: 14px; */
+    width: 50vw;
+    height: 100vh;
+  }
+
+  #game-container {
+    position: relative;
+    width: 50vw;
+    /* max-width: 540px; */
+    height: 100vh;
+    /* max-height: 960px; */
+    overflow: hidden;
+  }
+
+  #ui-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: 10px;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    pointer-events: none;
+  }
+
+  .ui-element {
+    background: rgba(0, 0, 0, 0.7);
+    color: gold;
+    padding: 10px 10px;
+    margin: 5px;
+    border-radius: 10px;
+    font-size: 24px;
+    font-weight: bold;
+    text-shadow: 0 0 5px black;
+  }
+
+  #response {
+    position: absolute;
+    top: 175px;
+    left: 50%;
+    transform: translateX(-50%);
+    color: white;
+    font-size: 24px;
+    background: rgba(235, 240, 240, 0);
+    padding: 10px 20px;
+    border-radius: 10px;
+    z-index: 100;
+  }
+}
+
+/* #game-container {
+  position: relative;
+  width: 100vw;
+  height: 100vh;
+
+  overflow: hidden;
+} */
+
+/* @media (min-width: 390px) {
+  #game-canvas {
+
+    width: 100vw;
+    height: 100vh;
+  }
+
+  #game-container {
+    position: relative;
+    width: 100vw;
+
+    height: 100vh;
+
+    overflow: hidden;
+  }
+} */
+
+/* #game-canvas {
+  width: 100%;
+  height: 100vh;
+} */
+
+#spin-btn {
+  position: absolute;
+  bottom: 50px;
+  left: 50%;
+  transform: translateX(-50%);
+  padding: 15px 40px;
+  font-size: 24px;
+  background: linear-gradient(to bottom, #f7b733, #fc4a1a);
+  color: rgb(2, 12, 4);
+  border: none;
+  border-radius: 50px;
+  cursor: pointer;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+  z-index: 100;
+}
+
+/* #response {
+  position: absolute;
+  top: 225px;
+  left: 50%;
+  transform: translateX(-50%);
+  color: white;
+  font-size: 24px;
+  background: rgba(235, 240, 240, 0);
+  padding: 10px 20px;
+  border-radius: 10px;
+  z-index: 100;
+} */
+
+/* #ui-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  padding: 20px;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  pointer-events: none;
+} */
+
+/* .ui-element {
+  background: rgba(0, 0, 0, 0.7);
+  color: gold;
+  padding: 10px 20px;
+  margin: 5px;
+  border-radius: 20px;
+  font-size: 24px;
+  font-weight: bold;
+  text-shadow: 0 0 5px black;
+} */
+
+.main-button {
+  pointer-events: auto;
+  background: linear-gradient(to bottom, #f7b733, #fc4a1a);
+  /* ... остальные стили ... */
+}
+
+.balance-change {
+  animation: balancePulse 0.5s;
+}
+
+.bet-change {
+  animation: balancePulse 0.5s;
+}
+
+.win-change {
+  animation: balancePulse 0.5s;
+}
+
+@keyframes balancePulse {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.2);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+/* @media (min-width: 540px) { */
+  /* body { */
+    /* background: url('../assets/backgrounds/phon.png') no-repeat center center fixed; */
+    /* background: url("https://images.unsplash.com/photo-1612036782180-6f0b6cd846fe")
+      no-repeat center center fixed;
+    background-size: cover;
+  }
+  #game-container {
+    background: rgba(26, 26, 46, 0.9);
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+  } */
+/* } */
