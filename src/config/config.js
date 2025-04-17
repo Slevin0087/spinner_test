@@ -33,9 +33,9 @@ export const Config = {
   bounceDuration: 0.3,
   spinSpeed: 100,
   slowDownSpeed: 2,
-  // serverDelay: { min: 1000, max: 3000 } // Имитация задержки сервера
+  serverDelay: { min: 1000, max: 3000 }, // Имитация задержки сервера
   // Имитация сервера
-  serverDelay: [1, 3],
+  // serverDelay: [1, 3],
 
   symbolValues: [10, 20, 30, 40, 50, 100, 150, 200, 500],
   specialSymbolIndex: 8,
