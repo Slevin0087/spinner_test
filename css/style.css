@@ -103,8 +103,8 @@
 
 @media (min-width: 540px) {
     body { */
-        /* background: url('../assets/backgrounds/phon.png') no-repeat center center fixed; */
-        /* background: url('https://images.unsplash.com/photo-1612036782180-6f0b6cd846fe') no-repeat center center fixed;
+/* background: url('../assets/backgrounds/phon.png') no-repeat center center fixed; */
+/* background: url('https://images.unsplash.com/photo-1612036782180-6f0b6cd846fe') no-repeat center center fixed;
         background-size: cover;
     }
     #game-container {
@@ -128,7 +128,9 @@ body {
 }
 
 /* Базовые стили (для всех устройств) */
-body { font-size: 14px; }
+body {
+  font-size: 14px;
+}
 
 /* Small phones (портрет) */
 @media (min-width: 360px) {
@@ -183,6 +185,10 @@ body { font-size: 14px; }
     border-radius: 10px;
     z-index: 100;
   }
+
+  /* #spin-btn {
+    top: 5%;
+  } */
 }
 
 /* Средние телефоны */
@@ -432,15 +438,15 @@ body { font-size: 14px; }
   }
   #game-canvas {
     /* font-size: 14px; */
-    width: 50vw;
-    height: 100vh;
+    width: 100%;
+    height: 100%;
   }
 
   #game-container {
     position: relative;
-    width: 50vw;
+    width: 30%;
     /* max-width: 540px; */
-    height: 100vh;
+    height: 100%;
     /* max-height: 960px; */
     overflow: hidden;
   }
@@ -554,13 +560,14 @@ body { font-size: 14px; }
   }
   #game-canvas {
     /* font-size: 14px; */
-    width: 50vw;
+    display: block;
+    width: 100%;
     height: 100vh;
   }
 
   #game-container {
     position: relative;
-    width: 50vw;
+    width: 30%;
     /* max-width: 540px; */
     height: 100vh;
     /* max-height: 960px; */
@@ -603,6 +610,16 @@ body { font-size: 14px; }
     border-radius: 10px;
     z-index: 100;
   }
+
+  /* #spin-btn {
+    top: 5%;
+  } */
+
+  #bet-up, #bet-down {
+    pointer-events: auto;
+    cursor: pointer;
+  }
+
 }
 
 /* #game-container {
@@ -719,9 +736,9 @@ body { font-size: 14px; }
 }
 
 /* @media (min-width: 540px) { */
-  /* body { */
-    /* background: url('../assets/backgrounds/phon.png') no-repeat center center fixed; */
-    /* background: url("https://images.unsplash.com/photo-1612036782180-6f0b6cd846fe")
+/* body { */
+/* background: url('../assets/backgrounds/phon.png') no-repeat center center fixed; */
+/* background: url("https://images.unsplash.com/photo-1612036782180-6f0b6cd846fe")
       no-repeat center center fixed;
     background-size: cover;
   }

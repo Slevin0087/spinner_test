@@ -12,17 +12,24 @@ function getViewportSize() {
 }
 
 const { width, height } = getViewportSize();
-// console.log(`Initial viewport: ${width}x${height}`);
+console.log(`Initial viewport: ${width}x${height}`);
 
 // const iconSize = 200;
 // const drumPadding = 20;
 // const drumBorderSize = 7;
 
-const iconSize = width >= 1080 ? 200 : width / 6;
-// console.log("iconSize:", iconSize);
+// const canEl = document.getElementById('game-canvas').offsetWidth;
+// const canEl2 = document.getElementById('game-canvas').offsetHeight;
+// const cStyle = window.getComputedStyle(canEl);
+// parseInt(cStyle)
+// console.log('canEl:', typeof canEl);
 
-const drumPadding = height / 200;
-const drumBorderSize = 5.5
+
+const iconSize = width / 5.55;
+console.log("iconSize:", iconSize);
+
+const drumPadding = width / 150;
+const drumBorderSize = width / 130;
 
 export const Config = {
   appWidth: width,

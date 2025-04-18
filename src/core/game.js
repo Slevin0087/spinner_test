@@ -6,6 +6,7 @@ import { WinDisplay } from "../ui/WinDisplay.js";
 import { BetDisplay } from "../ui/BetDisplay.js";
 import { BalanceDisplay } from "../ui/BalanceDisplay.js";
 import { ResponseDisplay } from "../ui/ResponseDisplay.js";
+import { inDeButton } from "../ui/inDeButton.js";
 import { SoundManager } from "../sounds/SoundManager.js";
 
 export class Game {
@@ -18,9 +19,12 @@ export class Game {
     this.isDrumSpinning = false;
     this.spinning = false;
     this.responseTime = 0;
+    this.bet = 10;
     this.ui = {
       spinBtn: new SpinButton("spin-btn", () => this.startSpin()),
       response: new ResponseDisplay("response"),
+      inDeButtonUP: new inDeButton("bet-up", () => this.incrementBet(this.bet)),
+      inDeButtonDOWN: new inDeButton("bet-down", () => this.decrementBet(this.bet)),
     };
     this.textures = [];
 
@@ -147,6 +151,23 @@ export class Game {
         drum.stop();
       }, i * 2000);
     });
+  }
+
+  incrementBet(bet) {
+    console.log('inc');
+    if (this.balance < bet) return;
+    this.currentBet += bet;
+    this.balance -= bet;
+    this.updateUI();
+  }
+
+  decrementBet(bet) {
+    console.log('dec');
+    
+    if (this.currentBet < bet) return;
+    this.currentBet -= bet;
+    this.balance += bet;
+    this.updateUI();
   }
 }
 

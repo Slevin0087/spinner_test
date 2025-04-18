@@ -36,29 +36,29 @@ export class Drum {
     this.drum = new PIXI.Container();
     this.drum.x =
       this.index * (Config.iconSize + Config.drumBorderSize * 2 + 2.3);
-    console.log("this.drum.x:", this.drum.x);
-
-    this.drum.y =
+      
+      this.drum.y =
       this.app.screen.height / 2 -
       (Config.visibleRows * Config.iconSize +
         Config.drumPadding * (Config.visibleRows - 1)) /
         2;
-    this.originalY = this.drum.y;
-    const mask = new PIXI.Graphics()
-      .beginFill(0xffffff)
-      .drawRoundedRect(
-        0,
-        0,
-        Config.iconSize + Config.drumBorderSize * 2,
-        Config.visibleRows * Config.iconSize +
+        this.originalY = this.drum.y;
+        const mask = new PIXI.Graphics()
+        .beginFill(0xffffff)
+        .drawRoundedRect(
+          0,
+          0,
+          Config.iconSize + Config.drumBorderSize * 2,
+          Config.visibleRows * Config.iconSize +
           Config.drumPadding * (Config.visibleRows - 1),
-        20
-      )
-      .endFill();
-
-    this.drum.mask = mask;
-    this.drum.addChild(mask);
-    console.log("this.drum:", this.drum);
+          20
+        )
+        .endFill();
+        
+        this.drum.mask = mask;
+        this.drum.addChild(mask);
+        console.log("this.drum.x:", this.drum.x);
+    // console.log("this.drum:", this.drum);
   }
 
   createIcons() {
@@ -75,6 +75,8 @@ export class Drum {
 
       this.icons.push(icon);
       this.drum.addChild(icon);
+      console.log('icon.y:', icon.y);
+      
     }
   }
 
