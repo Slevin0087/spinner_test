@@ -20,7 +20,7 @@ body {
 
 .main-button {
   position: absolute;
-  top: 90vh;
+  bottom: 100px;
   left: 50%;
   transform: translateX(-50%);
   background: linear-gradient(to bottom, #f7b733, #fc4a1a);
@@ -42,12 +42,12 @@ body {
   color: gold;
   margin: 5px;
   border-radius: 5px;
+  padding: 5px;
 }
 
 #bet-display {
   position: absolute;
   top: 10px;
-  padding: 10px;
   right: 20px;
 }
 
