@@ -18,21 +18,20 @@ console.log(`Initial viewport: ${width}x${height}`);
 // const drumPadding = 20;
 // const drumBorderSize = 7;
 
-// const canEl = document.getElementById('game-canvas').offsetWidth;
+const canEl = document.getElementById('game-container').clientWidth;
 // const canEl2 = document.getElementById('game-canvas').offsetHeight;
 // const cStyle = window.getComputedStyle(canEl);
 // parseInt(cStyle)
 // console.log('canEl:', typeof canEl);
 
-
-const iconSize = width / 5.55;
+const iconSize = canEl / 5.55;
 console.log("iconSize:", iconSize);
 
-const drumPadding = width / 150;
-const drumBorderSize = width / 130;
+const drumPadding = canEl / 150;
+const drumBorderSize = canEl / 130;
 
 export const Config = {
-  appWidth: width,
+  appWidth: canEl,
   appHeight: height,
   drumsCount: 5,
   visibleRows: 3,
@@ -97,5 +96,8 @@ export const Config = {
 
 window.addEventListener("resize", () => {
   getViewportSize();
+  const canEl = document.getElementById('game-canvas').clientWidth;
+  drumPadding = canEl / 150;
+  drumBorderSize = canEl / 130;
   // console.log(`Resized to: ${width}x${height}`);
 });

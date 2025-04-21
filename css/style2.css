@@ -6,11 +6,16 @@ body {
   min-height: 100vh;
   box-sizing: border-box;
   overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: url('https://images.unsplash.com/photo-1612036782180-6f0b6cd846fe') no-repeat center center fixed;
 }
 
 #game-container {
-  min-width: 100vw;
-  min-height: 100vh;
+  position: relative;
+  min-width: 100%;
+  min-height: 100%;
 }
 
 #game-canvas {
@@ -26,8 +31,9 @@ body {
   background: linear-gradient(to bottom, #f7b733, #fc4a1a);
   color: rgb(2, 12, 4);
   border: none;
-  border-radius: 5px;
+  border-radius: 10px;
   font-size: 24px;
+  padding: 10px 30px;
 }
 
 #ui-overlay {
@@ -47,14 +53,14 @@ body {
 #bet-display {
   position: absolute;
   top: 10px;
-  right: 20px;
+  right: 10px;
 }
 
 .bet-controls {
   position: absolute;
-  /* padding: 5px; */
+  padding: 5px;
   top: 42px;
-  right: 20px;
+  right: 10px;
 }
 
 #response {
@@ -65,4 +71,43 @@ body {
   transform: translateX(-50%);
   font-size: 20px;
   color: rgb(47, 255, 0);
+}
+
+@media (min-width: 768px) {
+  #game-container {
+    min-width: 70%;
+  }
+}
+
+@media (min-width: 992px) {
+  #game-container {
+    min-width: 50%;
+  }
+}
+
+@media (min-width: 1200px) {
+  #game-container {
+    min-width: 40%;
+  }
+  #response {
+    font-size: 24px;
+  }
+}
+
+@media (min-width: 1440px) {
+  #game-container {
+    min-width: 30%;
+  }
+  #response {
+    font-size: 26px;
+  }
+}
+
+@media (min-width: 1920px) {
+  #game-container {
+    min-width: 30%;
+  }
+  #response {
+    font-size: 28px;
+  }
 }
